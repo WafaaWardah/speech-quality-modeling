@@ -61,6 +61,7 @@ https://github.com/WafaaWardah/SQ-AST
 Please cite [this paper](https://www.isca-archive.org/interspeech_2025/wardah25_interspeech.html) when using this model.
 
 Cite as: Wardah, W., Spang, R.P., Barriac, V., Reimes, J., Llagostera, A., Berger, J., Möller, S. (2025) SQ-AST: A Transformer-Based Model for Speech Quality Prediction. Proc. Interspeech 2025, 2335-2339, doi: 10.21437/Interspeech.2025-2683
+
 ---
 
 ## Chapter 7: Out-of-Domain Application
