@@ -2,14 +2,14 @@ dev_flag: 1  # set to None or -1 for full training run, otherwise set to the num
 
 training:
 
-  runname: train_model_M_resume_2
+  runname: train_model_M
   # Paths  ---------------------------------------------------------------------------
   #output_dir: "/ds/audio/Speech_Quality_Datasets/weights/psamd" # base output directory
-  #data_dir: "/ds/audio/Speech_Quality_Datasets" # assuming this contains a folder named AST_inputs with normalzed log mel spectrogram .pt tensors
+  #data_dir: "/ds/audio/Speech_Quality_Datasets" 
   #dev_labels_path: "/ds/audio/Speech_Quality_Datasets/24-11-30_labels.csv"
 
   output_dir: "/Users/wafaa/Code/psamd-master/multitask/ast_model_M/outputs" 
-  data_dir: "/Users/wafaa/DataBases/PSAMD_DB" # assuming this contains a folder named AST_inputs with normalzed log mel spectrogram .pt tensors
+  data_dir: "/Users/wafaa/DataBases/PSAMD_DB" 
   dev_labels_path: "/Users/wafaa/DataBases/PSAMD_DB/24-11-30_labels.csv"
 
   # Training parameters  -------------------------------------------------------------
