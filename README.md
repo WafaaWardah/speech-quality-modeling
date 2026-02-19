@@ -54,6 +54,10 @@ This allows analysis of:
 - Task-specific representation specialization  
 - Performance trade-offs between joint and independent modeling  
 
+The implementation for this part is available in:
+
+https://github.com/WafaaWardah/SQ-AST
+
 ---
 
 ## Chapter 7: Out-of-Domain Application
