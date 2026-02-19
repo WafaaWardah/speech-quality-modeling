@@ -1,0 +1,34 @@
+dev_flag: 2  # set to None or -1 for full training run, otherwise set to the number of batches to run
+dimension: mos
+interval: 20
+
+training:
+
+  runname: zs-HuBERT
+  # Paths  ---------------------------------------------------------------------------
+  output_dir: "/Users/wafaa/Code/psamd-master/zeroshot/outputs" # base output directory
+  data_dir: "/Users/wafaa/DataBases/PSAMD_DB"
+  dev_labels_path: "/Users/wafaa/Code/psamd-master/data/outputs/labels-28-July/label_28_July_stats.csv"
+
+  #output_dir: "/ds/audio/Speech_Quality_Datasets/weights/zeroshot" # base output directory
+  #data_dir: "/ds/audio/Speech_Quality_Datasets"
+  #dev_labels_path: "/ds/audio/Speech_Quality_Datasets/label_28_July_stats.csv"
+
+  # Training parameters  -------------------------------------------------------------
+  max_epochs: 1
+  es_patience: 10
+  lr: 0.001
+  tr_lr_patience: 1
+  bs: 64
+  train_shuffle: True
+  num_workers: 4
+
+  tr_db_list:
+      - NISQA_TRAIN_SIM
+      - NISQA_TRAIN_LIVE
+  val_db_list:
+      - NISQA_VAL_LIVE
+      - NISQA_VAL_SIM
+
+model:
+  pretrained_path: #"/ds/audio/Speech_Quality_Datasets/weights/synth-AST/psamd_mos.pth"

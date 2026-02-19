@@ -33,13 +33,7 @@ All encoders are kept frozen and evaluated using identical downstream regression
 
 ## Chapter 5: Multi-Task Modeling
 
-Development of a joint prediction framework that simultaneously estimates:
-
-- Overall speech quality  
-- Noisiness  
-- Discontinuity  
-- Coloration  
-- Loudness  
+Development of a joint prediction framework that simultaneously estimates the overall speech quality and the 4 perceptual diemnsions.
 
 The Audio Spectrogram Transformer (AST) serves as the backbone model.
 
