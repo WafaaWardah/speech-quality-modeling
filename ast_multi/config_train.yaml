@@ -1,0 +1,137 @@
+dev_flag: 1  # set to None or -1 for full training run, otherwise set to the number of batches to run
+
+training:
+
+  runname: train_model_M_resume_2
+  # Paths  ---------------------------------------------------------------------------
+  #output_dir: "/ds/audio/Speech_Quality_Datasets/weights/psamd" # base output directory
+  #data_dir: "/ds/audio/Speech_Quality_Datasets" # assuming this contains a folder named AST_inputs with normalzed log mel spectrogram .pt tensors
+  #dev_labels_path: "/ds/audio/Speech_Quality_Datasets/24-11-30_labels.csv"
+
+  output_dir: "/Users/wafaa/Code/psamd-master/multitask/ast_model_M/outputs" 
+  data_dir: "/Users/wafaa/DataBases/PSAMD_DB" # assuming this contains a folder named AST_inputs with normalzed log mel spectrogram .pt tensors
+  dev_labels_path: "/Users/wafaa/DataBases/PSAMD_DB/24-11-30_labels.csv"
+
+  # Training parameters  -------------------------------------------------------------
+  max_epochs: 30
+  es_patience: 10
+  lr: 0.000001
+  tr_lr_patience: 1
+  bs: 1 #64
+  train_shuffle: False #True
+  num_workers: 0 #4
+
+  tr_db_list: 
+    - NISQA_TRAIN_SIM
+    - NISQA_TRAIN_LIVE
+    - ETSI_ENG_DB01
+    - ETSI_ENG_DB02_PD
+    - ETSI_ENG_DB03_PD
+    - ETSI_GER_DB02_PD
+    - ETSI_GER_DB03
+    - ETSI_MAN_DB01_PD
+    - ETSI_MAN_DB03_PD
+    - FB_TUB_DEV
+    - FB_TUB_SPO
+    - GER_Automotive
+    - GER_Headset
+    - ENG_Handset
+    - ENG_Headset
+    - MAN_Headset
+    - MAN_Automotive
+    - NB_48kHz_ATT_iLBC
+    - NB_48kHz_BT_P862_BGN_ENG
+    - NB_48kHz_BT_P862_PROP
+    - NB_48kHz_DT_P862_1st
+    - NB_48kHz_DT_P862_BGN_GER
+    - NB_48kHz_DT_P862_Share
+    - NB_48kHz_ERIC_AMR_4B
+    - NB_48kHz_ERIC_FIELD_GSM_EU
+    - NB_48kHz_ERIC_P862_NW_MEAS
+    - NB_48kHz_FT_P563_PROP
+    - NB_48kHz_GIPS_EXP1
+    - NB_48kHz_HUAWEI_1
+    - NB_48kHz_ITU_SUPPL23_EXP1a
+    - NB_48kHz_ITU_SUPPL23_EXP1d
+    - NB_48kHz_ITU_SUPPL23_EXP3a
+    - NB_48kHz_ITU_SUPPL23_EXP3c
+    - NB_48kHz_LUC_P563_PROP
+    - NB_48kHz_OPT_P563_PROP
+    - NB_48kHz_PSY_P563_PROP
+    - NB_48kHz_QUALCOMM_EXP1b
+    - NB_48kHz_QUALCOMM_EXP2b
+    - NB_48kHz_QUALCOMM_EXP3w
+    - NB_48kHz_QUALCOMM_EXP4
+    - NB_48kHz_QUALCOMM_EXP6a
+    - NB_48kHz_QUALCOMM_EXP6b
+    - NB_48kHz_SQ_P563_PROP
+    - NB_48kHz_TNO_P862_KPN_KIT97
+    - NB_48kHz_TNO_P862_NW_EMU
+    - NB_48kHz_TNO_P862_NW_MEAS
+    - Orange_C122_DB01
+    - Orange_C122_DB02
+    - Orange_NB_coders
+    - Orange_Neural
+    - Orange_Teams_Conv
+    - Orange_G711
+    - SIM_CODEC
+    - STORYTIME
+    - SUB_TUB_1
+    - SWB_48kHz101_ERICSSON
+    - SWB_48kHz201_FT_DT
+    - SWB_48kHz202_FT_DT
+    - SWB_48kHz301_OPTICOM
+    - SWB_48kHz302_OPTICOM
+    - SWB_48kHz401_PSYTECHNICS
+    - SWB_48kHz501_SWISSQUAL
+    - SWB_48kHz502_SWISSQUAL
+    - SWB_48kHz601_TNO
+    - SWB_48kHz602_TNO
+    - SWB_48kHz_DT_SWB_Izabela
+    - SWB_48kHz_GIPS_Exp4
+    - SWB_48kHz_PAMD_Orange_1
+    - SWB_48kHz_PAMD_Swissqual_1
+    - SWB_48kHz_TCD
+    - SWB_TUB_DIS
+    - SWB_TUB_VUPL
+    - Vin700
+    - Vin1008
+    - WB_48kHz102_ERICSSON
+    - WB_48kHz204_FTDT
+    - WB_48kHz402_PSYTECHNICS
+    - WB_48kHz_DTAG_1
+    - WB_48kHz_DTAG_2
+    - WB_48kHz_DT_HQ_Voice
+    - WB_48kHz_DT_Mobisense
+    - WB_48kHz_GIPS_Exp3
+    - WB_48kHz_QUALCOMM_EXP1w
+    - WB_48kHz_QUALCOMM_EXP5
+  
+  val_db_list:
+    - NISQA_VAL_SIM
+    - NISQA_VAL_LIVE
+    - SWB_48kHz503_SWISSQUAL
+    - FB_TUB_AUS
+    - SWB_TUB_LIK
+    - SWB_48kHz103_ERICSSON
+    - SWB_48kHz203_FT_DT
+    - SWB_48kHz303_OPTICOM
+    - SWB_48kHz403_PSYTECHNICS
+    - SWB_48kHz603_TNO
+    - NB_48kHz104_Ericsson
+    - NB_48kHz404_PSYTECHNICS
+    - NB_48kHz504_SWISSQUAL
+    - NB_48kHz_ERIC_FIELD_GSM_US
+    - NB_48kHz_ITU_SUPPL23_EXP3d
+    - NB_48kHz_ITU_SUPPL23_EXP3o
+    - NB_48kHz_ITU_SUPPL23_EXP1o
+    - NB_48kHz_HUAWEI_2
+    - ETSI_MAN_DB02
+    - ETSI_GER_DB01_PD
+    - MAN_Handset
+    - ENG_Automotive
+
+model:
+  pretrained_path: #/ds/audio/Speech_Quality_Datasets/weights/psamd/train_model_M_resume_20241214_023923/train_model_M_resume_20241214_023923.tar # Trained AST model hidden state (not the original pretrained AST)
+
+
